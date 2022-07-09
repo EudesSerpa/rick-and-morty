@@ -28,41 +28,54 @@ const CharacterDetails = async () => {
         </figcaption>
       </figure>
 
-      <section class="section-character__details">
+      <section class="section-character__details">    
+        <article class="status ${
+          character.status.toLowerCase() === "alive"
+            ? "status--alive"
+            : "status--dead"
+        }">
+          <h3 class="character__details__title status__title">Status</h3>
+
+          <p class="status__text character__details__text">${
+            character.status
+          }</p>
+        </article>
+        
+        <article class="species">
+          <h3 class="character__details__title species__title">Species</h3>
+
+          <p class="species__text character__details__text">${
+            character.species
+          }</p>
+        </article>
+
+        <article class="origin">
+          <h3 class="character__details__title origin__title">Origin</h3>
+
+          <p class="origin__text character__details__text">${
+            character.origin.name
+          }</p>
+        </article>
+
+        <article class="last-known-location">
+          <h3 class="character__details__title last-known-location__title">Last known Location</h3>
+
+          <p class="last-known-location__text character__details__text">${
+            character.location.name
+          }</p>
+        </article>
+
         <article class="episodes">
-          <h3 class="episodes__title">Episodes</h3>
+          <h3 class="character__details__title episodes__title">Episodes</h3>
           
           <ul class="episodes__list">
             ${episodesData
               ?.map(
-                (episode) => `<li class="episodes__item">${episode?.name}</li>`
+                (episode) =>
+                  `<li class="episodes__item character__details__text">${episode?.name}</li>`
               )
               .join("")}
           </ul>
-        </article>
-            
-        <article class="status">
-          <h3 class="status__title">Status</h3>
-
-          <p class="status__text">${character.status}</p>
-        </article>
-        
-        <article class="species">
-          <h3 class="species__title">Species</h3>
-
-          <p class="species__text">${character.species}</p>
-        </article>
-
-        <article class="origin">
-          <h3 class="origin__title">Origin</h3>
-
-          <p class="origin__text">${character.origin.name}</p>
-        </article>
-
-        <article class="last-known-location">
-          <h3 class="last-known-location__title">Last known Location</h3>
-
-          <p class="last-known-location__text">${character.location.name}</p>
         </article>
       </section>
     </section>

@@ -11,7 +11,9 @@ const Home = async () => {
   }
 
   return `
-    ${CharactersList(characters)}
+    <section class="section-home">
+      ${CharactersList(characters)}
+    </section>
   `;
 };
 
