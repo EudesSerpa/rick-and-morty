@@ -2,7 +2,7 @@ import getHash from "../../utils/getHash";
 import getData from "../../services/getData";
 
 const CharacterDetails = async () => {
-  const characterId = getHash();
+  const characterId = getHash().split("/")[2];
 
   const character = await getData({ endpoint: `character/${characterId}` });
 

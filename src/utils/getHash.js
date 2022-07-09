@@ -3,16 +3,23 @@
  * @returns {string} - The destination route ("about", character id or "/"")
  */
 const getHash = () => {
-  const homeRoute = "/";
+  const maxLengthOfCharacterId = 3; // max 3 digits for a character id
+  const homeRoutes = ["/", "characters/"];
 
   const path = window.location.hash.substring(1).toLocaleLowerCase();
-  const destinationRoute = path.split("/")[1];
 
-  if (destinationRoute) {
+  const destinationRoute = path.split("/")[1];
+  const characterId = path.split("/")[2];
+
+  if (characterId && characterId.length <= maxLengthOfCharacterId) {
+    return `/${destinationRoute}/${characterId}`;
+  }
+
+  if (destinationRoute && !homeRoutes.includes(destinationRoute)) {
     return destinationRoute;
   }
 
-  return homeRoute;
+  return homeRoutes[0];
 };
 
 export default getHash;

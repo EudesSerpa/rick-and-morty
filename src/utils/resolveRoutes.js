@@ -4,12 +4,14 @@
  * @returns {string} - A valid route or the route that the user is trying to access.
  */
 const resolveRoutes = (route) => {
-  const maxLengthOfCharacterId = 3;
+  const characterId = route.split("/")[2];
 
-  // If the route has a length of 3 or less, it is a character id or the home route.
-  if (route.length <= maxLengthOfCharacterId) {
-    const validRoute = route === "/" ? "/" : `/:id`;
-    return validRoute;
+  if (characterId) {
+    return `/characters/:id`;
+  }
+
+  if (route === "/") {
+    return "/";
   }
 
   return `/${route}`;
