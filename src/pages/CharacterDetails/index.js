@@ -9,7 +9,9 @@ const CharacterDetails = async () => {
   const episodesData = await Promise.all(
     character.episode.map(async (episode) => {
       const episodeId = episode.split("/").pop();
-      const episodeData = await getData({ endpoint: `episode/${episodeId}` });
+      const episodeData = await getData({
+        endpoint: `episode/${episodeId}`,
+      });
       return episodeData;
     })
   );

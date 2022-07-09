@@ -4,7 +4,7 @@
  */
 const getHash = () => {
   const maxLengthOfCharacterId = 3; // max 3 digits for a character id
-  const homeRoutes = ["/", "characters/"];
+  const homeRoutes = ["/", "characters"];
 
   const path = window.location.hash.substring(1).toLocaleLowerCase();
 

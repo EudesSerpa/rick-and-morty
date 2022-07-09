@@ -26,16 +26,17 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
-        test: /\.webp$/,
+        test: /\.(webp|png|ico)$/,
         type: "asset/resource",
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      inject: true,
       template: "./public/index.html",
       filename: "./index.html",
+      favicon: "./public/favicon.ico",
+      inject: true,
     }),
     new MiniCssExtractPlugin(),
   ],

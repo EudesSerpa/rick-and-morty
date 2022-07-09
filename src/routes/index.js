@@ -11,8 +11,7 @@ const routes = {
   "/locations": Locations,
   "/episodes": Episodes,
   "/characters/:id": CharacterDetails,
-  "/characters": Home,
-  "/": Home,
+  "/": Home, // and "/characters": Home,
 };
 
 const Router = async () => {
@@ -20,7 +19,7 @@ const Router = async () => {
 
   // Get route
   const hash = getHash();
-  const route = await resolveRoutes(hash);
+  const route = resolveRoutes(hash);
 
   const routeToRender = routes[route] || NotFound;
 
