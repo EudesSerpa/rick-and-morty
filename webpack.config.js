@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
-    assetModuleFilename: "assets/images/[hash][ext][query]",
+    assetModuleFilename: "assets/[hash][ext][query]",
   },
   resolve: {
     extensions: [".js"],
@@ -27,6 +27,10 @@ module.exports = {
       },
       {
         test: /\.(webp|png|ico)$/,
+        type: "asset/resource",
+      },
+      {
+        test: /\.(woff2)$/i,
         type: "asset/resource",
       },
     ],

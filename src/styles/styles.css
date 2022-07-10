@@ -1,4 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@font-face {
+  font-family: 'Averia Sans Libre';
+  src: url("../assets/fonts/averia-sans-libre-v17-latin-300.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Averia Sans Libre';
+  src: url("../assets/fonts/averia-sans-libre-v17-latin-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Averia Sans Libre';
+  src: url("../assets/fonts/averia-sans-libre-v17-latin-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
 
 :root {
   /* Colors */
@@ -17,7 +34,7 @@
   --background-color-section: #FAFAFA;
 
   /* Fonts */
-  --font-primary: 'Poppins', sans-serif;
+  --font-primary: 'Averia Sans Libre', sans-serif;
 
   /* Font-Sizes */
   --title-section: 3.6em;
@@ -92,7 +109,7 @@ a {
   display: flex;
   align-items: center;
   gap: .7em;
-  font-size: calc(.5vw + var(--text-size));
+  font-size: calc(.6vw + var(--text-size));
 }
 
 .header__nav-item:hover {
@@ -126,6 +143,7 @@ a {
   height: 100%;
 }
 
+/* Home Page */
 /* Characters List */
 .characters-list {
   display: grid;
@@ -162,7 +180,7 @@ a {
 .character-card__name {
   padding: 0 .6em;
   color: var(--primary-color);
-  font-size: calc(.3vw + var(--text-size));
+  font-size: calc(.5vw + var(--text-medium-size));
   transition: color .6s ease-in-out;
 }
 
@@ -221,7 +239,7 @@ a {
 
 .character-card__name {
   padding-block: .5em;
-  font-size: calc(1vw + var(--text-medium-size));
+  font-size: calc(1.2vw + var(--text-medium-size));
 }
 
 .section-character__details {
@@ -232,12 +250,12 @@ a {
 }
 
 .character__details__title {
-  font-size: calc(.65vw + var(--text-medium-size));
+  font-size: calc(1vw + var(--text-medium-size));
   margin-bottom: .2em;
 }
 
 .character__details__text {
-  font-size: calc(.5vw + var(--text-smaller-size));
+  font-size: calc(.55vw + var(--text-smaller-size));
 }
 
 .status--alive {
@@ -261,7 +279,7 @@ a {
 }
 
 .episodes__item {
-  padding: 0 .5em;
+  padding: .2em .5em;
 }
 
 .episodes__item:nth-child(3n + 1) {
@@ -289,8 +307,49 @@ a {
   color: var(--text-white-color);
 }
 
+/* Footer */
+.footer {
+  display: grid;
+  place-items: center;
+  height: 50px;
+  padding: .4em;
+  background-color: var(--background-color-section);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-black-color);
+  font-size: calc(.6vw + var(--text-size));
+}
 
+.footer__heart {
+  font-size: 1.5em;
+  color: var(--red-color);
+}
 
+.footer__link {
+  position: relative;
+  display: inline-block;
+  color: var(--primary-color);
+  transition: color .3s ease-in-out;
+}
+
+.footer__link:hover {
+  color: var(--secondary-color);
+}
+
+.footer__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 100%;
+  height: 3px;
+  background-color: var(--secondary-color);
+  transition: right .3s ease-in-out;
+}
+.footer__link:hover::after {
+  right: 0;
+}
+
+/* Animations */
 @keyframes fade {
   from {
     opacity: 0;

@@ -3,6 +3,7 @@ import Locations from "../pages/Locations";
 import Episodes from "../pages/Episodes";
 import NotFound from "../pages/NotFound";
 import Header from "../templates/Header";
+import Footer from "../templates/Footer";
 import CharacterDetails from "../pages/CharacterDetails";
 import getHash from "../utils/getHash";
 import resolveRoutes from "../utils/resolveRoutes";
@@ -29,6 +30,8 @@ const Router = async () => {
     <main class="main wrapper">
       ${await routeToRender()}
     </main>
+
+    ${Footer()}
   `;
 };
 
