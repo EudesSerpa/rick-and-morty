@@ -1,9 +1,8 @@
 /**
- * It returns the destination route from the hash in the URL, or the home route if the hash is empty.
- * @returns {string} - The destination route ("about", character id or "/"")
+ * It takes the hash from the URL and returns the route that should be rendered.
+ * @returns the path of the current route.
  */
 const getHash = () => {
-  const maxLengthOfCharacterId = 3; // max 3 digits for a character id
   const homeRoutes = ["/", "characters"];
 
   const path = window.location.hash.substring(1).toLocaleLowerCase();
@@ -11,7 +10,7 @@ const getHash = () => {
   const destinationRoute = path.split("/")[1];
   const characterId = path.split("/")[2];
 
-  if (characterId && characterId.length <= maxLengthOfCharacterId) {
+  if (characterId) {
     return `/${destinationRoute}/${characterId}`;
   }
 

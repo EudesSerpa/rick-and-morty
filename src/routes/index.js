@@ -24,6 +24,18 @@ const Router = async () => {
 
   const routeToRender = routes[route] || NotFound;
 
+  // Loader
+  App.innerHTML = `
+    ${Header()}
+    
+    <main class="main wrapper">
+      ${Loader()}
+    </main>
+
+    ${Footer()}
+  `;
+
+  // Render route
   App.innerHTML = `
     ${Header()}
     
@@ -32,6 +44,12 @@ const Router = async () => {
     </main>
 
     ${Footer()}
+  `;
+};
+
+const Loader = () => {
+  return `
+    <div class="loader"></div>
   `;
 };
 
