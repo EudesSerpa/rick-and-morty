@@ -1,11 +1,15 @@
-import getHash from "../../utils/getHash";
 import logo from "../../assets/images/rickandmortylogo.webp";
+import getHash from "../../utils/getHash";
+import validCharacterId from "../../utils/validCharacterId";
 
 const Header = () => {
   const path = getHash();
 
   const characterId = path.split("/")[2];
-  const charactersPath = path === "/" || path === "characters" || characterId;
+
+  // Get active route
+  const charactersPath =
+    path === "/" || path === "characters" || validCharacterId(characterId);
   const locationsPath = path === "locations";
   const episodesPath = path === "episodes";
 
