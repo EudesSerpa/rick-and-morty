@@ -48,7 +48,7 @@ const Router = async () => {
     ${Footer()}
   `;
 
-  pagination;
+  pagination();
 };
 
 export default Router;
