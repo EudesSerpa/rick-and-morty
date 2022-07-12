@@ -1,12 +1,14 @@
 import Home from "../pages/Home";
+import CharacterDetails from "../pages/CharacterDetails";
 import Locations from "../pages/Locations";
 import Episodes from "../pages/Episodes";
 import NotFound from "../pages/NotFound";
 import Header from "../templates/Header";
 import Footer from "../templates/Footer";
-import CharacterDetails from "../pages/CharacterDetails";
+import Loader from "../templates/Loader";
 import getHash from "../utils/getHash";
 import resolveRoutes from "../utils/resolveRoutes";
+import pagination from "../utils/pagination";
 
 const routes = {
   "/locations": Locations,
@@ -45,12 +47,8 @@ const Router = async () => {
 
     ${Footer()}
   `;
-};
 
-const Loader = () => {
-  return `
-    <div class="loader"></div>
-  `;
+  pagination;
 };
 
 export default Router;

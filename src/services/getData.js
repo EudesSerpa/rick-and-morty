@@ -1,8 +1,12 @@
 import API_URL from "./setting";
 
-const getData = async ({ endpoint }) => {
+const getData = async ({ endpoint, page = null }) => {
   try {
-    const res = await fetch(`${API_URL}/${endpoint}`);
+    const url = `${
+      page ? `${API_URL}/${endpoint}?page=${page}` : `${API_URL}/${endpoint}`
+    }`;
+
+    const res = await fetch(url);
     return await res.json();
   } catch (err) {
     console.error({ err });

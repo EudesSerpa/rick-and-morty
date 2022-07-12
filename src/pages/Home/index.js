@@ -1,18 +1,33 @@
 import CharactersList from "./charactersList";
 import getData from "../../services/getData";
+import { getPages, INITIAL_PAGE } from "../../utils/getPages";
 
 const Home = async () => {
-  const characters = JSON.parse(localStorage.getItem("characters"));
+  const searchParamValue = window.location.hash.split("=")[1];
+  const page = searchParamValue || INITIAL_PAGE;
 
-  if (!characters) {
-    const characters = await getData({ endpoint: "character" });
+  const characters = await getData({ endpoint: "character", page });
 
-    localStorage.setItem("characters", JSON.stringify(characters));
-  }
+  const { prevPage, currentPage, nextPage } = getPages({
+    prevPageUrl: characters.info.prev,
+    nextPageUrl: characters.info.next,
+  });
 
   return `
     <section class="section-home">
       ${CharactersList(characters)}
+
+      <div class="pagination">
+        <button class="pagination__button pagination__button--prev" ${
+          prevPage ? "" : "disabled"
+        } data-prevpage="${prevPage}">Prev</button>
+        
+        <span class="pagination__current">${currentPage}</span>
+        
+        <button class="pagination__button pagination__button--next" ${
+          nextPage ? "" : "disabled"
+        } data-nextpage="${nextPage}">Next</button>
+      </div>
     </section>
   `;
 };

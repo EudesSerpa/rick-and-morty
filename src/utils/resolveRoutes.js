@@ -1,9 +1,13 @@
 import validCharacterId from "./validCharacterId";
 
 /**
- * If the route is a character id, return the route with the id parameter. If the route is the home
- * page, return the home page. Otherwise, return the route
- * @param route - hash in the URL
+ * Resolves the route of the current page.
+ *
+ * If the route contains a valid character id, it returns the character details route.
+ * If the route is the home route, returns it.
+ * Otherwise, it returns the entire route.
+ *
+ * @param route - The route of the current page.
  * @returns {string} - The destination route ("/:route", "/:id" or "/"")
  */
 const resolveRoutes = (route) => {
