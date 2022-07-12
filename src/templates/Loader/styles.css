@@ -1,0 +1,16 @@
+.loader {
+  align-self: center;
+  justify-self: center;
+  border: 4px solid var(--background-color-section);
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+}
+
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

@@ -1,5 +1,6 @@
 import getHash from "../../utils/getHash";
 import getData from "../../services/getData";
+import "./styles.css";
 
 const CharacterDetails = async () => {
   const characterId = getHash().split("/")[2];

@@ -1,6 +1,7 @@
 import CharactersList from "./charactersList";
 import getData from "../../services/getData";
 import { getPages, INITIAL_PAGE } from "../../utils/getPages";
+import "./styles.css";
 
 const Home = async () => {
   const searchParamValue = window.location.hash.split("=")[1];

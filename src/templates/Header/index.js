@@ -1,6 +1,7 @@
 import logo from "../../assets/images/rickandmortylogo.webp";
 import getHash from "../../utils/getHash";
 import validCharacterId from "../../utils/validCharacterId";
+import "./styles.css";
 
 const Header = () => {
   const path = getHash();

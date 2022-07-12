@@ -1,3 +1,5 @@
+import "./styles.css";
+
 const NotFound = () => {
   return `
     <section class="not-found">

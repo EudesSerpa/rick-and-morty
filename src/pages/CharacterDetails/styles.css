@@ -1,0 +1,98 @@
+.section-character {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3em;
+}
+
+.character-card {
+  display: inline-block;
+  background-color: var(--background-color-section);
+  border: 1px solid var(--border-color);
+  border-radius: .5em;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
+  text-align: center;
+  animation: fade 2.5s ease-out;
+}
+
+.character-card__image {
+  width: 100%;
+}
+
+.character-card__name {
+  padding-block: .5em;
+  font-size: calc(1.2vw + var(--text-medium-size));
+}
+
+.section-character__details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5em;
+}
+
+.character__details__title {
+  font-size: calc(1vw + var(--text-medium-size));
+  margin-bottom: .2em;
+}
+
+.character__details__text {
+  font-size: calc(.55vw + var(--text-smaller-size));
+}
+
+.status--alive {
+  color: var(--green-color);
+}
+
+.status--dead {
+  color: var(--red-color);
+}
+
+.episodes {
+  width: 100%;
+}
+
+.episodes__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: .6em;
+}
+
+.episodes__item {
+  padding: .2em .5em;
+}
+
+.episodes__item:nth-child(3n + 1) {
+  background-color: var(--yellow-color);
+  color: var(--text-black-color);
+}
+
+.episodes__item:nth-child(3n + 2) {
+  background-color: var(--pink-color);
+  color: var(--text-black-color);
+}
+
+.episodes__item:nth-child(3n + 3) {
+  background-color: var(--primary-color);
+  color: var(--text-white-color);
+}
+
+.episodes__item:nth-child(4n + 1) {
+  background-color: var(--green-color);
+  color: var(--text-white-color);
+}
+
+.episodes__item:nth-child(4n + 2) {
+  background-color: var(--secondary-color);
+  color: var(--text-white-color);
+}
+
+
+/* Animations */
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
