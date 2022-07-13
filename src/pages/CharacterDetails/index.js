@@ -2,6 +2,16 @@ import getHash from "../../utils/getHash";
 import getData from "../../services/getData";
 import "./styles.css";
 
+const statusClass = (status) => {
+  const states = {
+    alive: "status--alive",
+    dead: "status--dead",
+    unknown: "status--unknown",
+  };
+
+  return states[status.toLowerCase()] || "";
+};
+
 const CharacterDetails = async () => {
   const characterId = getHash().split("/")[2];
 
@@ -32,11 +42,7 @@ const CharacterDetails = async () => {
       </figure>
 
       <section class="section-character__details">    
-        <article class="status ${
-          character.status.toLowerCase() === "alive"
-            ? "status--alive"
-            : "status--dead"
-        }">
+        <article class="status ${statusClass(character.status)}">
           <h3 class="character__details__title status__title">Status</h3>
 
           <p class="status__text character__details__text">${

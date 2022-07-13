@@ -49,6 +49,10 @@
   color: var(--red-color);
 }
 
+.status--unknown {
+  color: var(--gray-color);
+}
+
 /* Episodes */
 .episodes {
   width: 100%;
