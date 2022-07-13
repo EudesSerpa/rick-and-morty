@@ -7,7 +7,20 @@ const Home = async () => {
   const searchParamValue = window.location.hash.split("=")[1];
   const page = searchParamValue || INITIAL_PAGE;
 
-  const characters = await getData({ endpoint: "character", page });
+  const charactersCached = window.localStorage.getItem(
+    `characters-${page || INITIAL_PAGE}`
+  );
+
+  let characters = JSON.parse(charactersCached);
+
+  if (!characters) {
+    characters = await getData({ endpoint: "character", page });
+
+    window.localStorage.setItem(
+      `characters-${page || INITIAL_PAGE}`,
+      JSON.stringify(characters)
+    );
+  }
 
   const { prevPage, currentPage, nextPage } = getPages({
     prevPageUrl: characters.info.prev,
