@@ -10,9 +10,9 @@ export const INITIAL_PAGE = 1;
  * nextPage: The next page number.
  */
 export const getPages = ({ prevPageUrl, nextPageUrl }) => {
-  const prevPage = prevPageUrl ? prevPageUrl.split("=")[1] : null;
-  const nextPage = nextPageUrl ? nextPageUrl.split("=")[1] : null;
-  const currentPage = +prevPage + 1 || +nextPage - 1 || INITIAL_PAGE;
+  const prevPage = prevPageUrl ? parseInt(prevPageUrl.split("=")[1]) : null;
+  const nextPage = nextPageUrl ? parseInt(nextPageUrl.split("=")[1]) : null;
+  const currentPage = prevPage + 1 || nextPage - 1 || INITIAL_PAGE;
 
   return { prevPage, currentPage, nextPage };
 };
