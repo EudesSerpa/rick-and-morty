@@ -1,0 +1,57 @@
+.episodes__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1em;
+  margin: 2em auto;
+  font-size: calc(.55vw + var(--text-smaller-size));
+}
+
+.episodes__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: .6em;
+  border-radius: .5em;
+  text-align: center;
+}
+
+.episodes__item-number {
+  margin-bottom: .5em;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.episodes__item-name {
+  font-size: 1.05em;
+}
+
+.episodes__item:nth-child(3n + 1),
+.character__details__episodes-list__item:nth-child(3n + 1) {
+  background-color: var(--yellow-color);
+  color: var(--text-black-color);
+}
+
+.episodes__item:nth-child(3n + 2),
+.character__details__episodes-list__item:nth-child(3n + 2) {
+  background-color: var(--pink-color);
+  color: var(--text-black-color);
+}
+
+.episodes__item:nth-child(3n + 3),
+.character__details__episodes-list__item:nth-child(3n + 3) {
+  background-color: var(--primary-color);
+  color: var(--text-white-color);
+}
+
+.episodes__item:nth-child(4n + 1),
+.character__details__episodes-list__item:nth-child(4n + 1) {
+  background-color: var(--green-color);
+  color: var(--text-white-color);
+}
+
+.episodes__item:nth-child(4n + 2),
+.character__details__episodes-list__item:nth-child(4n + 2) {
+  background-color: var(--secondary-color);
+  color: var(--text-white-color);
+}

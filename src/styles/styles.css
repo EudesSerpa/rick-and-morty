@@ -25,6 +25,7 @@
   --text-black-color: #323237;
   --text-white-color: #FFFFFF;
   
+  --gray-color: #9c9a9a;
   --red-color: #fb6467ff;
   --yellow-color: #f0e14a;
   --pink-color: #e89ac7;
@@ -91,6 +92,11 @@ a {
   margin-block: 2em;
 }
 
+.section__title {
+  margin-bottom: .5em;
+  color: var(--primary-color);
+  font-size: calc(1vw + var(--text-larger-size));
+}
 
 /* Responsive */
 @media screen and (max-width: 540px) {

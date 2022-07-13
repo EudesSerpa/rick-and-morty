@@ -1,5 +1,6 @@
 import CharactersList from "./charactersList";
 import getData from "../../services/getData";
+import { ENDPOINTS } from "../../services/setting";
 import { getPages, INITIAL_PAGE } from "../../utils/getPages";
 import "./styles.css";
 
@@ -14,7 +15,7 @@ const Home = async () => {
   let characters = JSON.parse(charactersCached);
 
   if (!characters) {
-    characters = await getData({ endpoint: "character", page });
+    characters = await getData({ endpoint: ENDPOINTS.CHARACTERS, page });
 
     window.localStorage.setItem(
       `characters-${page || INITIAL_PAGE}`,

@@ -1,4 +1,4 @@
-import API_URL from "./setting";
+import { API_URL } from "./setting";
 
 const getData = async ({ endpoint, page = null }) => {
   try {

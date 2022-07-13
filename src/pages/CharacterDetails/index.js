@@ -10,9 +10,11 @@ const CharacterDetails = async () => {
   const episodesData = await Promise.all(
     character.episode.map(async (episode) => {
       const episodeId = episode.split("/").pop();
+
       const episodeData = await getData({
         endpoint: `episode/${episodeId}`,
       });
+
       return episodeData;
     })
   );
@@ -69,11 +71,11 @@ const CharacterDetails = async () => {
         <article class="episodes">
           <h3 class="character__details__title episodes__title">Episodes</h3>
           
-          <ul class="episodes__list">
+          <ul class="character__details__episodes-list">
             ${episodesData
               ?.map(
-                (episode) =>
-                  `<li class="episodes__item character__details__text">${episode?.name}</li>`
+                ({ name }) =>
+                  `<li class="character__details__episodes-list__item">${name}</li>`
               )
               .join("")}
           </ul>

@@ -49,11 +49,12 @@
   color: var(--red-color);
 }
 
+/* Episodes */
 .episodes {
   width: 100%;
 }
 
-.episodes__list {
+.character__details__episodes-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -61,35 +62,10 @@
   gap: .6em;
 }
 
-.episodes__item {
+.character__details__episodes-list__item {
   padding: .2em .5em;
+  font-size: calc(.5vw + var(--text-smaller-size));
 }
-
-.episodes__item:nth-child(3n + 1) {
-  background-color: var(--yellow-color);
-  color: var(--text-black-color);
-}
-
-.episodes__item:nth-child(3n + 2) {
-  background-color: var(--pink-color);
-  color: var(--text-black-color);
-}
-
-.episodes__item:nth-child(3n + 3) {
-  background-color: var(--primary-color);
-  color: var(--text-white-color);
-}
-
-.episodes__item:nth-child(4n + 1) {
-  background-color: var(--green-color);
-  color: var(--text-white-color);
-}
-
-.episodes__item:nth-child(4n + 2) {
-  background-color: var(--secondary-color);
-  color: var(--text-white-color);
-}
-
 
 /* Animations */
 @keyframes fade {

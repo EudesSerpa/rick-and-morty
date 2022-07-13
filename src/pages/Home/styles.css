@@ -1,4 +1,3 @@
-/* Characters List */
 .characters-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -68,6 +67,7 @@
   color: var(--text-white-color);
 }
 
+/* Pagination */
 .pagination {
   display: flex;
   justify-content: center;

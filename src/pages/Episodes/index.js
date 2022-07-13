@@ -1,7 +1,26 @@
-const Episodes = () => {
+import getData from "../../services/getData";
+import { ENDPOINTS } from "../../services/setting";
+import "./styles.css";
+
+const Episodes = async () => {
+  const episodes = await getData({ endpoint: ENDPOINTS.EPISODES });
+
   return `
-    <section class="episodes wrapper">
-      <h1 class="episodes__title">Episodes</h1>  
+    <section class="episodes">
+      <h1 class="section__title episodes__title">Episodes</h1>
+      
+      <ul class="episodes__list">
+        ${episodes.results
+          .map(
+            ({ episode, name }) => `
+          <li class="episodes__item">
+            <span class="episodes__item-number">${episode}</span>
+            <span class="episodes__item-name">${name}</span>
+          </li>
+        `
+          )
+          .join("")}
+      </ul>
     </section>
   `;
 };
