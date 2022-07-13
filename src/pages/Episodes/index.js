@@ -6,7 +6,7 @@ const Episodes = async () => {
   const episodes = await getData({ endpoint: ENDPOINTS.EPISODES });
 
   return `
-    <section class="episodes">
+    <section class="section-episodes">
       <h1 class="section__title episodes__title">Episodes</h1>
       
       <ul class="episodes__list">
