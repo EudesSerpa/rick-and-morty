@@ -6,6 +6,10 @@ SPA with Vanilla JS about the Rick and Morty series🧪
 
 This project aims to develop a Vanilla JavaScript Single Page Application (SPA) that implements the Rick and Morty API 🧪.
 
+## Preview
+
+You can see it in [rick and morty](https://rick-and-morty-serpadev.netlify.app/#/)
+
 ## Installation
 
 Use the package manager [npm](https://www.npmjs.com/) to install all of the dependencies.
